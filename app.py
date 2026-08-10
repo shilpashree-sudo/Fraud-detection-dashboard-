@@ -5,8 +5,10 @@ import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
-from flask import Flask
+from flask import Flask, render_templates, request, jsonify
 app = Flask(__name__)
+model = joblib.load("models/fraud_model.pkl")
+
 import xgboost as xgb
 
 MODELS_DIR = "models"
@@ -61,7 +63,8 @@ def train_and_save_model():
     print("Model training complete! Artifacts saved to ./models/")
 
 if __name__ == "__main__":
-    train_and_save_model()@app.route("/")
+    train_and_save_model()
+@app.route("/")
 def home():
-    return "Fraud Detection Dashboard is running!"
+    return render_template("index.html")
 
