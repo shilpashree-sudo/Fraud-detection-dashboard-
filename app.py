@@ -66,5 +66,6 @@ if __name__ == "__main__":
     train_and_save_model()
 @app.route("/")
 def home():
-    return render_template/index.html
+    return 
+render_template("index.html")
 
