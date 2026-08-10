@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
 from flask import Flask
-app = Flask(_name_)
+app = Flask(__name__)
 import xgboost as xgb
 
 MODELS_DIR = "models"
