@@ -5,7 +5,7 @@ import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
-from flask import Flask, render_templates, request, jsonify
+from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 model = joblib.load("models/fraud_model.pkl")
 
