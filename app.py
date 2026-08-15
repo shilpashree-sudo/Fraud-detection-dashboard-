@@ -2,6 +2,10 @@ import os
 import numpy as np
 import pandas as pd
 import joblib
+import streamlit as st
+st,tittle("Fraud Detection Dashboard")
+st.title("Fraud Detection Dashboard")
+st.title("Fraud Detection Dashboard")
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
@@ -63,7 +67,7 @@ def train_and_save_model():
     print("Model training complete! Artifacts saved to ./models/")
 
 if __name__ == "__main__":
-    train_and_save_model()
+    app.run(debug=True)
 @app.route("/")
 def home():
     return 
